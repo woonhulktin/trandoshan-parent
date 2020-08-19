@@ -113,5 +113,9 @@ Copy a file in the container to the host
 
 ``docker cp <container>:<file name> <host path>``
 
+# Connect to MongoDB database in the container by MongoDB Compass
+First install [MongoDB Compass](https://www.mongodb.com/try/download/compass])
 
+Then get the IP address of MongoDB database by ``docker inspect <mongo container name>``
 
+Finally fill in the Hostname with the IP address in MongoDB Compass and connect. The port is by default 27017.
