@@ -10,6 +10,7 @@ If you want to clone all projects used by Trandoshan it can be done by issuing t
 
 First of all make sure docker is running, then issue the following command:
 
+``cd trandoshan-parent/``
 ``./bootstrap.sh``
 
 the command will pull image from docker hub (https://hub.docker.com/u/trandoshanio)
@@ -40,6 +41,7 @@ The first thing to do before coding is to build your custom dev version of trand
 
 To do this all you have to do is to issue the following command:
 
+``cd trandoshan-parent/``
 ``./build.sh``
 
 this will build a docker image for each projects listed in *projects.txt*
@@ -61,3 +63,55 @@ Just uncomment the following line in *docker-compose.yml*
 ```
 
 and configure the *INITIAL_URI* env variable to the url you want to crawl
+
+# Commands for operating mongoDB database
+Show all running containers
+
+``docker ps``
+
+Open a shell to a running container
+
+``docker exec -it <container name> bash``
+
+Start mongoDB in the shell
+
+``mongo``
+
+Show current database
+
+``db``
+
+Show all databases on the server
+
+``show dbs``
+
+Show all availabel databases
+
+``show databases``
+
+Switch current database to <db>
+
+``use <db>``
+
+Show all collections of current database
+
+``show collections``
+
+Find all documents in the collection
+
+``db.<collection>.find()``
+
+Show total number of documents in the collection
+
+``db.<collection>.count()`
+
+Export the collection to a file
+
+``mongoexport --db <database name> -c <collection name> --out <file path and name>``
+
+Copy a file in the container to the host
+
+``docker cp <container>:<file name> <host path>``
+
+
+
